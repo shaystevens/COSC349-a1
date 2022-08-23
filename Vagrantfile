@@ -57,6 +57,15 @@ Vagrant.configure("2") do |config|
     dbserver.vm.provision "shell", path: "build-dbserver-vm.sh"
   end
 
+  config.vm.define "adminserver" do |adminserver|
+    adminserver.vm.hostname = "adminserver"
+    adminserver.vm.network "forwarded_port", guest: 80, host: 8081, host_ip: "127.0.0.1"
+    adminserver.vm.network "private_network", ip: "192.168.56.13"
+    adminserver.vm.synced_folder ".", "/vagrant", owner: "vagrant", group: "vagrant", mount_options: ["dmode=775,fmode=777"]
+
+    adminserver.vm.provision "shell", path: "build-adminserver-vm.sh"
+  end
+
 end
 
 #  LocalWords:  webserver xenial64
