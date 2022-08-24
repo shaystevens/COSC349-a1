@@ -115,7 +115,8 @@ let map = (function(){
         let locationText;
         let parentTag;
         let refTag;
-        let dataArray = data.features;
+        let dataOBJ = JSON.parse(data)
+        let dataArray = dataOBJ.features;
         for(i=0; i < dataArray.length; i+=1){
             locationTag = document.createElement("p");
             locationText = document.createTextNode(dataArray[i].properties.name);
@@ -158,7 +159,8 @@ let map = (function(){
      */
     pub.addMarkers = function(data){
         let i;
-        let dataArray = data.features;
+        let dataOBJ = JSON.parse(data)
+        let dataArray = dataOBJ.features;
 
         for(i=0; i< dataArray.length; i+=1){
             pub.addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
@@ -172,7 +174,8 @@ let map = (function(){
      */
     pub.addParkMarkers = function(data){
         let i;
-        let dataArray = data.features;
+        let dataOBJ = JSON.parse(data)
+        let dataArray = dataOBJ.features;
 
         for(i=1; i< 4; i+=1){
             pub.addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
@@ -186,7 +189,8 @@ let map = (function(){
      */
     pub.addTrackMarkers = function(data){
         let i;
-        let dataArray = data.features;
+        let dataOBJ = JSON.parse(data)
+        let dataArray = dataOBJ.features;
 
         for(i=4; i < dataArray.length; i+=1){
             pub.addMarker(dataArray[i].properties.color, dataArray[i].geometry.coordinates);
