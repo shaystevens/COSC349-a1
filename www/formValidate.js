@@ -312,8 +312,8 @@ let formValidator = (function () {
 
         if (messages.length === 0) {
             // Set booking to local storage and hide page to display the thank you message
-            //$('#dogs')[0].style.display = 'none';
-            //$('#bookingSuccess')[0].style.display = 'block';
+            $('#dogs')[0].style.display = 'none';
+            $('#bookingSuccess')[0].style.display = 'block';
             let dateArray = date.split('/');
             let day = dateArray[1];
             let month = dateArray[0];
@@ -335,7 +335,8 @@ let formValidator = (function () {
             localStorage.removeItem("dogId");
         } else {
             // Report the error messages
-            displayErrorMessages(messages.type);
+            displayErrorMessages(messages);
+            return false;
         }
 
         // Stop the form from submitting, which would trigger a page load
