@@ -107,11 +107,12 @@
             <tr id="imageTable">
             </tr>
         </table>
-        <form novalidate id="bookingInfo">
+        <form action='booking.php' id="bookingInfo" method='POST' novalidate>
             <!--Booking info details -->
             <fieldset>
                 <legend>Booking Details:</legend>
                 <p>
+                    <input type="hidden" name ="dogs" id="dogsForm">
                     <label for="name">Please enter your name:</label>
                     <input type="text" name="name" id="name" required>
                 </p>
@@ -201,7 +202,7 @@
                 </p>
             </fieldset>
             <input type="button" value="Cancel Booking" id="cancelButton">
-            <input type="submit">
+            <input type="submit" name="submit" value="Submit">
         </form>
         <ul id="bookingError" style="color: red">
         </ul>
