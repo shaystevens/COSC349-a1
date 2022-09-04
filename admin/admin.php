@@ -17,28 +17,34 @@
     </style>
 </head>
 <body>
-<h1>Database test page</h1>
-
-<p>Showing contents of papers table:</p>
-<table border="1">
-<tr><th>Name</th><th>Dogs</th></tr>
-
+<h1>Doge Rentals oo</h1>
+<main id="adminMain">
 <?php
-$db_host   = '192.168.56.12';
-$db_name   = 'fvision';
-$db_user   = 'webuser';
-$db_passwd = 'insecure_db_pw';
-$pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
+        $db_host   = '192.168.56.12';
+        $db_name   = 'fvision';
+        $db_user   = 'webuser';
+        $db_passwd = 'insecure_db_pw';
+        $pdo_dsn = "mysql:host=$db_host;dbname=$db_name";
+        $pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+        $q = $pdo->query("SELECT * FROM bookings");
+        $row = $q->fetch();
+        if(count($row) == 1){
+            echo "<p style='font-size: 40px; text-align: center;'>There are currently no bookings</p>";
+            echo "</br>";
+        }else{
+            echo "<p style='margin-Bottom: 100px; font-size: 50px; margin-Top: 0px; font-weight: bold'>Bookings:</p>";
+            echo "</br>";
+            echo "<table border='1' style='background-color: white'>";
+            echo "<tr><th>Name</th><th>Dogs</th><th>Booking Date</th><th>Hours</th></tr>";
 
-$pdo = new PDO($pdo_dsn, $db_user, $db_passwd);
+            do{
+                echo "<tr><td>".$row["customer_name"]."</td><td>".$row["dogs"]."</td><td>".$row["booking_date"]."</td><td>".$row["booking_hours"]."</td></tr>\n";
+            } while($row = $q->fetch());
 
-$q = $pdo->query("SELECT * FROM bookings");
-
-while($row = $q->fetch()){
-  echo "<tr><td>".$row["customer_name"]."</td><td>".$row["dogs"]."</td></tr>\n";
-}
-
-?>
-</table>
+            echo "</table>";
+            echo "</br style='margin-Bottom: 150px'>";
+        }
+        ?>
+</main>
 </body>
 </html>

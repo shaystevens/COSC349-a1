@@ -7,4 +7,3 @@ CREATE TABLE bookings (
   PRIMARY KEY (Customerid)
 );
 
-INSERT into bookings (customer_name, dogs, booking_date, booking_hours) VALUES('Michael Johnson', '[DW-001, DW-002, DW-003]', '2022-12-29', 12);
