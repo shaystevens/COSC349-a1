@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-<h1>Doge Rentals oo</h1>
+<h1><a href = "http://127.0.0.1:8080/index.html">Doge Rentals oo</a></h1>
 <main id="adminMain">
 <?php
         $db_host   = '192.168.56.12';
