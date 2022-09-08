@@ -33,6 +33,30 @@ Shay Stevens
     float: right;
 }
 
+#usernameInput, #passwordInput{
+    text-align: center;
+    padding: 12px 50px;
+    margin-left: 20px;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+}
+
+#login-header, #error-header{
+    font-family: aerial; 
+    color: white;
+    font-size: 70px;
+    margin-left: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#login-form-submit{
+    margin-left: 700px;
+    width: 100px;
+    font-size: 20px;
+}
+
 /* Index header style*/
 h1 {
     text-align: left;
@@ -349,8 +373,14 @@ p{
     color: white;
 }
 
+.error_messages{
+    color: red;
+    text-align: center;
+    font-size: 20px;
+}
+
 /* Style for mains and form (add boarder)*/
-#contactMain, #reviewMain, #bookingForm, #adminMain{
+#contactMain, #reviewMain, #bookingForm, #adminMain, #loginMain, #login-Validation-main{
     padding: 10px;
     margin: 150px auto 10px  auto;
     border: 2px solid white;

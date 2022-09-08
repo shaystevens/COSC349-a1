@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["admin"])){
+    header("Location: http://127.0.0.1:8080/index.html");
+    exit;
+}
+?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html lang="en">
 <head>
@@ -43,6 +50,7 @@
 
             echo "</table>";
             echo "</br style='margin-Bottom: 150px'>";
+
         }
         ?>
 </main>

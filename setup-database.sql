@@ -7,3 +7,9 @@ CREATE TABLE bookings (
   PRIMARY KEY (Customerid)
 );
 
+CREATE TABLE admin (
+  username char(5),
+  password char(40)
+);
+
+INSERT INTO admin (username, password) VALUES ("admin", SHA1("admin"));
