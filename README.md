@@ -1,6 +1,6 @@
 # COSC349-a1
 ## Shay Stevens #7196262
-My application is a dog booking website, called Doge Rentals. The application is built using three virtual machines (running ubuntu/focal64) . The first VM is a web server that users interact with to make a booking. The second VM is a database server that stores the bookings made by users and admin login details with the use of MySQL. And the third VM is an admin server that hosts the admin page that shows the bookings made by users from the database. 
+My application is a dog booking website, called Doge Rentals. The application is built using three virtual machines (running ubuntu/focal64). The first VM is a web server that users interact with to make a booking. The second VM is a database server that stores the bookings made by users and admin login details with the use of MySQL. And the third VM is an admin server that hosts the admin page that shows the bookings made by users from the database. 
 
 ## Getting started
 ### Step 1:
@@ -25,7 +25,7 @@ The database server is responsible for hosting the database. MySQL is used to cr
 The admin server is responsible for hosting the admin webpage. The admin page are hosted on `127.0.0.1:8081/admin.php` this is to add extra security as you don't want users to access the admin page. The admin page (admin.php) reads the bookings from the bookings database from #VM2 and displays the bookings in a table for the admin to look at. The admin server's ip address is 192.168.56.13.
 
 ## Login
-Username: "admin"
+Username: "admin"<br />
 Password: "admin"
 
 ## Cleaning up
